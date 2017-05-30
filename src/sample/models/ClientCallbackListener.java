@@ -11,4 +11,5 @@ import java.rmi.RemoteException;
 public interface ClientCallbackListener extends Remote {
     // Metoda implementowana w kliencie ale uruchamiana na serwerze
     void sendToClient(String text, int tileNum) throws RemoteException;
+    void sendResetToClient() throws RemoteException;
 }

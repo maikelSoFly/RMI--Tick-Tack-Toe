@@ -17,25 +17,36 @@
             <Pane fx:id="pane" prefHeight="400.0" prefWidth="400.0" BorderPane.alignment="CENTER" />
          </center>
          <bottom>
-            <HBox alignment="CENTER_LEFT" prefHeight="15.0" prefWidth="200.0" spacing="20.0" style="-fx-background-color: #3e75f1;" BorderPane.alignment="CENTER">
+            <HBox alignment="CENTER_LEFT" prefHeight="15.0" prefWidth="200.0" spacing="10.0" style="-fx-background-color: #3e75f1;" BorderPane.alignment="CENTER">
                <children>
-                  <Label fx:id="lbl1" text="Label" textFill="WHITE">
+                  <Button fx:id="btnReset" mnemonicParsing="false" onAction="#handleReset" prefHeight="10.0" style="-fx-background-color: #3D5EDC;" text="RESET" textFill="WHITE">
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
+                  </Button>
+                  <Label text="YOU ARE:" textFill="WHITE">
+                     <font>
+                        <Font name="Helvetica" size="8.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl1" text="X" textFill="WHITE">
                      <font>
                         <Font name="Helvetica" size="11.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl2" text="Label" textFill="WHITE">
+                  <Region prefHeight="10.0" prefWidth="30.0" />
+                  <Label fx:id="lbl2" text="WAIT FOR YOUR TURN" textFill="WHITE">
                      <font>
-                        <Font size="11.0" />
+                        <Font size="8.0" />
                      </font>
                   </Label>
                </children>
                <BorderPane.margin>
                   <Insets />
                </BorderPane.margin>
-               <padding>
-                  <Insets left="5.0" />
-               </padding>
             </HBox>
          </bottom>
       </BorderPane>

@@ -68,4 +68,18 @@ public class Tile extends Rectangle {
             }
         });
     }
+
+    public Text getTxtSign() {
+        return txtSign;
+    }
+
+    public void removeTxtSign(Pane pane) {
+        Platform.runLater(new Runnable() {
+            @Override
+            public void run() {
+                pane.getChildren().remove(getTxtSign());
+            }
+        });
+
+    }
 }

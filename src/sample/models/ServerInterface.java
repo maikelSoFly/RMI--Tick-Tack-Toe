@@ -11,4 +11,5 @@ import java.rmi.RemoteException;
 
 interface ServerInterface extends Remote {
     void sendText(String text, int tileNum)  throws RemoteException;
+    void sendReset() throws RemoteException;
 }

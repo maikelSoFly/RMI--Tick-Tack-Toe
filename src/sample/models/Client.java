@@ -47,11 +47,29 @@ public class Client extends UnicastRemoteObject implements ClientCallbackListene
 
     }
 
+    public void sendResetToServer(){
+        // Sending message to Server
+        try {
+            ServerInterface server = (ServerInterface)remoteService;
+            server.sendReset();
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
+
+    }
+
     @Override
     public void sendToClient(String text, int tileNum) throws RemoteException {
         // Method which be used by server
         if(GUIListener != null){
             GUIListener.writeText(new GUIEvent(this, text, tileNum));
+        }
+    }
+
+    @Override
+    public void sendResetToClient() {
+        if(GUIListener != null) {
+            GUIListener.reset();
         }
     }
 

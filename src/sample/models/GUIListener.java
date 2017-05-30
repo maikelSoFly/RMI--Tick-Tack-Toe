@@ -10,4 +10,5 @@ import java.util.EventListener;
 public interface GUIListener extends EventListener {
     // zwykly listener do polaczenia sieci z GUI
     void writeText(GUIEvent evt);
+    void reset();
 }

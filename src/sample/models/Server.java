@@ -42,11 +42,29 @@ public class Server extends UnicastRemoteObject implements ServerInterface, Clie
         }
     }
 
+    @Override
+    public void sendReset() throws RemoteException {
+        // Server's method calling from client
+        if(GUIListener != null){
+            GUIListener.reset();
+        }
+    }
+
     public void sendToClient(String text, int tileNum){
         // Calling method from client
         if(clientCallbackListener != null) {
             try {
                 clientCallbackListener.sendToClient(text, tileNum);
+            } catch (RemoteException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void sendResetToClient() {
+        if(clientCallbackListener != null) {
+            try {
+                clientCallbackListener.sendResetToClient();
             } catch (RemoteException e) {
                 e.printStackTrace();
             }
